@@ -1,0 +1,24 @@
+{
+  "name": "progamacao-web-1s-2025-marcos",
+  "version": "1.0.0",
+  "description": "Repositório para colocar as atividades efetuadas na aula de programação web da minha faculdade de engenharia de software",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesmarcos1/progamacao-web-1s-2025-marcos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jamesmarcos1/progamacao-web-1s-2025-marcos/issues"
+  },
+  "homepage": "https://github.com/jamesmarcos1/progamacao-web-1s-2025-marcos#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

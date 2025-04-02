@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/jamesmarcos1/progamacao-web-1s-2025-marcos#readme",
   "dependencies": {
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "progamacao-web-1s-2025-marcos": "file:"
   }
 }

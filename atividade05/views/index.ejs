@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Agendamento</title>
+    <style>
+        fieldset {
+            margin-bottom: 1.5em;
+        }
+
+        label {
+            display: block;
+            margin-top: .5em;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: .5em;
+        }
+
+        .error {
+            color: #c00;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Agendamento</h1>
+    <% if (errors.length) { %>
+        <ul class="error">
+            <% errors.forEach(e=> { %>
+                <li>
+                    <%= e.msg %> (<%= e.param %>)
+                </li>
+                <% }) %>
+        </ul>
+        <% } %>
+            <form method="POST" action="/">
+                <fieldset>
+                    <legend>Dados do paciente</legend>
+                    <label>Nome <input type="text" name="nome" value="<%= data.nome||'' %>"></label>
+                    <label>Sobrenome <input type="text" name="sobrenome" value="<%= data.sobrenome||'' %>"></label>
+                    <label>CPF <input type="text" name="cpf" value="<%= data.cpf||'' %>"></label>
+                    <label>Data de nascimento <input type="date" name="nascimento"
+                            value="<%= data.nascimento||'' %>"></label>
+                    <label>Telefone <input type="tel" name="telefone" value="<%= data.telefone||'' %>"></label>
+                    <label>CEP <input type="text" name="cep" value="<%= data.cep||'' %>"></label>
+                    <label>Endereço <input type="text" name="endereco" value="<%= data.endereco||'' %>"></label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Dados da consulta</legend>
+                    <label>Clínica
+                        <select name="clinica">
+                            <option value="">-- selecione --</option>
+                            <option value="clinica1" <%=data.clinica==='clinica1' ?'selected':'' %>>Clínica 1</option>
+                            <option value="clinica2" <%=data.clinica==='clinica2' ?'selected':'' %>>Clínica 2</option>
+                        </select>
+                    </label>
+                    <label>Especialidade
+                        <select name="especialidade">
+                            <option value="">-- selecione --</option>
+                            <option value="cardio" <%=data.especialidade==='cardio' ?'selected':'' %>>Cardiologia
+                            </option>
+                            <option value="derma" <%=data.especialidade==='derma' ?'selected':'' %>>Dermatologia
+                            </option>
+                        </select>
+                    </label>
+                    <label>Data <input type="date" name="data" value="<%= data.data||'' %>"></label>
+                    <label>Hora <input type="time" name="hora" value="<%= data.hora||'' %>"></label>
+                    <label>Observação <textarea name="observacao"><%= data.observacao||'' %></textarea></label>
+                </fieldset>
+
+                <button type="submit">Enviar</button>
+            </form>
+</body>
+
+</html>
